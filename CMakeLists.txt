@@ -11,10 +11,15 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 #set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # 源文件路径
-set(SOURCE_FILES
-    src/SimpleFactory.cpp
-)
+# 自动展开 src/ 目录下的所有 .cpp 文件
+file(GLOB SOURCE_FILES "src/*.cpp")
 
 # 添加可执行文件
-add_executable(${PROJECT_NAME} ${SOURCE_FILES})
+ foreach(SRC ${SOURCE_FILES})
+     get_filename_component(FILENAME "${SRC}" NAME_WE)
+     message("${FILENAME}")
+     add_executable(${PROJECT_NAME}-${FILENAME} ${SRC})
+ endforeach()
+
+#add_executable(${PROJECT_NAME} ${SOURCE_FILES})
 

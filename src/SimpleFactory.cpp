@@ -1,4 +1,9 @@
+/*
+When to Use?
 
+When creating an object is not just a few assignments and involves some logic,
+it makes sense to put it in a dedicated factory instead of repeating the same code everywhere.
+*/
 #include <iostream>
 namespace clanguml{
 namespace SimpleFactory{
@@ -37,17 +42,18 @@ namespace SimpleFactory{
 			return new WoodenDoor(width,height);
 		}
 	};
-
-	int main()
-	{
-		class Door* door1 = DoorFactory::makeDoor(100,220);
-		class Door* door2 = DoorFactory::makeDoor(101,222);
-
-		std::cout << door1->getWidth() << "-" << door1->getHeight()<<"\n";
-		std::cout << door2->getWidth() << "-" << door2->getHeight()<<"\n";
-		
-
-		return 0;
-	}
 }
+}
+
+using namespace clanguml::SimpleFactory;
+int main()
+{
+	class Door* door1 = DoorFactory::makeDoor(100,220);
+	class Door* door2 = DoorFactory::makeDoor(101,222);
+
+	std::cout << door1->getWidth() << "-" << door1->getHeight()<<"\n";
+	std::cout << door2->getWidth() << "-" << door2->getHeight()<<"\n";
+	
+
+	return 0;
 }
