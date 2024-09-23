@@ -1,0 +1,30 @@
+@startuml
+abstract "Door" as C_0007051015942496422031
+abstract C_0007051015942496422031 {
+{abstract} +getHeight() = 0 : float
+{abstract} +getWidth() = 0 : float
+__
+}
+class "WoodenDoor" as C_0002250662239072155787
+class C_0002250662239072155787 {
++WoodenDoor(float w, float h) : void
+..
++getHeight() : float
++getWidth() : float
+__
+-m_height : float
+-m_width : float
+}
+class "DoorFactory" as C_0006204370604731192764
+class C_0006204370604731192764 {
+{static} +makeDoor(float width, float height) : Door *
+__
+}
+C_0007051015942496422031 <|-- C_0002250662239072155787
+
+C_0006204370604731192764 ..> C_0007051015942496422031
+note left of C_0006204370604731192764: 工厂入口
+
+'Generated with clang-uml, version 0.5.4-14-ga36f4ca
+'LLVM version Ubuntu clang version 14.0.0-1ubuntu1.1
+@enduml
