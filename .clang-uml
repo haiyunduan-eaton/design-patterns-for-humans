@@ -4,7 +4,7 @@ diagrams:
   SimpleFactory_class:
     type: class
     glob:
-      - src/*.cpp
+      - src/SimpleFactory.cpp
     using_namespace: clanguml::SimpleFactory
     include:
       namespaces:
@@ -12,3 +12,25 @@ diagrams:
     plantuml:
       after:
         - 'note left of {{ alias("DoorFactory") }}: 工厂入口'
+  FactoryMethod_class:
+    type: class
+    glob:
+      - src/FactoryMethod.cpp
+    using_namespace: clanguml::FactoryMethod
+    include:
+      namespaces:
+        - clanguml::FactoryMethod
+    plantuml:
+      after:
+        - 'note left of {{ alias("clanguml::FactoryMethod::ProtocolFactory") }}: 工厂入口'
+  AbstractFactory_class:
+    type: class
+    glob:
+      - src/AbstractFactory.cpp
+    using_namespace: clanguml::AbstractFactory
+    include:
+      namespaces:
+        - clanguml::AbstractFactory
+    plantuml:
+      after:
+        - 'note left of {{ alias("clanguml::AbstractFactory::ProtocolFactory") }}: 工厂入口'

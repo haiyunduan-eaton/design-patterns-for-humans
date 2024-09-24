@@ -1,0 +1,102 @@
+@startuml
+abstract "Protocol" as C_0007639808613616496233
+abstract C_0007639808613616496233 {
++~Protocol() = default : void
+..
+{abstract} +send(const char * data) = 0 : void
+__
+}
+class "QProtocol" as C_0000978900636300089385
+class C_0000978900636300089385 {
++send(const char * data) : void
+__
+}
+class "ShutProtocol" as C_0007875111691360516689
+class C_0007875111691360516689 {
++send(const char * data) : void
+__
+}
+class "ModbusProtocol" as C_0014586431833533822418
+class C_0014586431833533822418 {
++send(const char * data) : void
+__
+}
+abstract "ProtocolParser" as C_0000227478829820337172
+abstract C_0000227478829820337172 {
++~ProtocolParser() : void
+..
+{abstract} +parse() = 0 : void
+__
+}
+class "QProtocolParser" as C_0005104923032049056072
+class C_0005104923032049056072 {
++parse() : void
+__
+}
+class "ShutProtocolParser" as C_0009603925065130512536
+class C_0009603925065130512536 {
++parse() : void
+__
+}
+class "ModbusProtocolParser" as C_0001173923828144823346
+class C_0001173923828144823346 {
++parse() : void
+__
+}
+abstract "ProtocolFactory" as C_0002927637185262260578
+abstract C_0002927637185262260578 {
++~ProtocolFactory() : void
+..
+{abstract} +createProtocol() = 0 : Protocol *
+{abstract} +createProtocolParser() = 0 : ProtocolParser *
+__
+}
+class "UPSModelName1" as C_0000371637500431407218
+class C_0000371637500431407218 {
++createProtocol() : Protocol *
++createProtocolParser() : ProtocolParser *
+__
+}
+class "UPSModelName2" as C_0000996561271834107609
+class C_0000996561271834107609 {
++createProtocol() : Protocol *
++createProtocolParser() : ProtocolParser *
+__
+}
+class "UPSModelName3" as C_0015479327712262646599
+class C_0015479327712262646599 {
++createProtocol() : Protocol *
++createProtocolParser() : ProtocolParser *
+__
+}
+C_0007639808613616496233 <|-- C_0000978900636300089385
+
+C_0007639808613616496233 <|-- C_0007875111691360516689
+
+C_0007639808613616496233 <|-- C_0014586431833533822418
+
+C_0000227478829820337172 <|-- C_0005104923032049056072
+
+C_0000227478829820337172 <|-- C_0009603925065130512536
+
+C_0000227478829820337172 <|-- C_0001173923828144823346
+
+C_0002927637185262260578 ..> C_0007639808613616496233
+C_0002927637185262260578 ..> C_0000227478829820337172
+C_0000371637500431407218 ..> C_0007639808613616496233
+C_0000371637500431407218 ..> C_0000227478829820337172
+C_0002927637185262260578 <|-- C_0000371637500431407218
+
+C_0000996561271834107609 ..> C_0007639808613616496233
+C_0000996561271834107609 ..> C_0000227478829820337172
+C_0002927637185262260578 <|-- C_0000996561271834107609
+
+C_0015479327712262646599 ..> C_0007639808613616496233
+C_0015479327712262646599 ..> C_0000227478829820337172
+C_0002927637185262260578 <|-- C_0015479327712262646599
+
+note left of C_0002927637185262260578: 工厂入口
+
+'Generated with clang-uml, version 0.5.4-14-ga36f4ca
+'LLVM version Ubuntu clang version 14.0.0-1ubuntu1.1
+@enduml
