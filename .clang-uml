@@ -11,7 +11,7 @@ diagrams:
         - clanguml::SimpleFactory
     plantuml:
       after:
-        - 'note left of {{ alias("DoorFactory") }}: 工厂入口'
+        - 'note left of {{ alias("DoorFactory") }}: Factory entrance'
   FactoryMethod_class:
     type: class
     glob:
@@ -22,7 +22,7 @@ diagrams:
         - clanguml::FactoryMethod
     plantuml:
       after:
-        - 'note left of {{ alias("clanguml::FactoryMethod::ProtocolFactory") }}: 工厂入口'
+        - 'note left of {{ alias("clanguml::FactoryMethod::ProtocolFactory") }}: Factory entrance'
   AbstractFactory_class:
     type: class
     glob:
@@ -33,4 +33,26 @@ diagrams:
         - clanguml::AbstractFactory
     plantuml:
       after:
-        - 'note left of {{ alias("clanguml::AbstractFactory::ProtocolFactory") }}: 工厂入口'
+        - 'note left of {{ alias("clanguml::AbstractFactory::ProtocolFactory") }}: Factory entrance'
+  Builder_class:
+    type: class
+    glob:
+      - src/Builder.cpp
+    using_namespace: clanguml::Builder
+    include:
+      namespaces:
+        - clanguml::Builder
+    plantuml:
+      after:
+        - 'note left of {{ alias("clanguml::Builder::BurgerBuilder") }}: Interface for building burgers'
+  Prototype_class:
+    type: class
+    glob:
+      - src/Prototype.cpp
+    using_namespace: clanguml
+    include:
+      namespaces:
+        - clanguml
+    plantuml:
+      after:
+         - ' '

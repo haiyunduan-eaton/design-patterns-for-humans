@@ -1,0 +1,27 @@
+@startuml
+abstract "Prototype" as C_0016245119886169515319
+abstract C_0016245119886169515319 {
++~Prototype() = default : void
+..
+{abstract} +clone() const = 0 : std::shared_ptr<Prototype>
+{abstract} +setName(std::string) = 0 : void
+{abstract} +show() const = 0 : void
+__
+}
+class "ConcretePrototype" as C_0000021890981382259650
+class C_0000021890981382259650 {
++ConcretePrototype(const std::string & name) : void
+..
++clone() const : std::shared_ptr<Prototype>
++setName(std::string name) : void
++show() const : void
+__
+-m_name : std::string
+}
+C_0016245119886169515319 <|-- C_0000021890981382259650
+
+ 
+
+'Generated with clang-uml, version 0.5.4-14-ga36f4ca
+'LLVM version Ubuntu clang version 14.0.0-1ubuntu1.1
+@enduml
