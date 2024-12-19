@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/haiyun/work/design-patterns-for-humans/build",
+  "command": "/usr/bin/c++   -g -std=gnu++17 -o CMakeFiles/design-patterns.dir/src/SimpleFactory.cpp.o -c /home/haiyun/work/design-patterns-for-humans/src/SimpleFactory.cpp",
+  "file": "/home/haiyun/work/design-patterns-for-humans/src/SimpleFactory.cpp"
+}
+]

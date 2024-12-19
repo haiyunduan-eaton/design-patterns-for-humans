@@ -23,7 +23,7 @@ __
 C_0007051015942496422031 <|-- C_0002250662239072155787
 
 C_0006204370604731192764 ..> C_0007051015942496422031
-note left of C_0006204370604731192764: 工厂入口
+note left of C_0006204370604731192764: Factory entrance
 
 'Generated with clang-uml, version 0.5.4-14-ga36f4ca
 'LLVM version Ubuntu clang version 14.0.0-1ubuntu1.1

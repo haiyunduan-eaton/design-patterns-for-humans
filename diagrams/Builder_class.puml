@@ -1,0 +1,36 @@
+@startuml
+class "BurgerBuilder" as C_0013700258639379758016
+class C_0013700258639379758016 {
++BurgerBuilder(int size) : void
+..
++addCheese() : BurgerBuilder &
++addLettuce() : BurgerBuilder &
++addPepperoni() : BurgerBuilder &
++addTomato() : BurgerBuilder &
++build() : std::unique_ptr<Burger>
+__
++cheese : bool
++lettuce : bool
++pepperoni : bool
++size : int
++tomato : bool
+}
+class "Burger" as C_0007987008009765001740
+class C_0007987008009765001740 {
++Burger(const BurgerBuilder & builder) : void
+..
++display() const : void
+__
+-cheese : bool
+-lettuce : bool
+-pepperoni : bool
+-size : int
+-tomato : bool
+}
+C_0013700258639379758016 ..> C_0007987008009765001740
+C_0007987008009765001740 ..> C_0013700258639379758016
+note left of C_0013700258639379758016: Interface for building burgers
+
+'Generated with clang-uml, version 0.5.4-14-ga36f4ca
+'LLVM version Ubuntu clang version 14.0.0-1ubuntu1.1
+@enduml
