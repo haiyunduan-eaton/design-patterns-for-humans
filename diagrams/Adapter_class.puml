@@ -1,0 +1,49 @@
+@startuml
+abstract "Animal" as C_0017711970220284096487
+abstract C_0017711970220284096487 {
++~Animal() = default : void
+..
+{abstract} +makeSound() const = 0 : void
+__
+}
+class "Lion" as C_0010915588174279284054
+class C_0010915588174279284054 {
++makeSound() const : void
+__
+}
+class "Tiger" as C_0013399811862019845015
+class C_0013399811862019845015 {
++makeSound() const : void
+__
+}
+class "WildDog" as C_0006690539395304301682
+class C_0006690539395304301682 {
++bark() const : void
+__
+}
+class "WildDogAdapter" as C_0007996665093840938448
+class C_0007996665093840938448 {
++WildDogAdapter(WildDog * wildDog) : void
+..
++makeSound() const : void
+__
+-wildDog_ : WildDog *
+}
+class "Hunter" as C_0015276942181045205998
+class C_0015276942181045205998 {
++hunt(const Animal & animal) const : void
+__
+}
+C_0017711970220284096487 <|-- C_0010915588174279284054
+
+C_0017711970220284096487 <|-- C_0013399811862019845015
+
+C_0007996665093840938448 --> C_0006690539395304301682 : -wildDog_
+C_0017711970220284096487 <|-- C_0007996665093840938448
+
+C_0015276942181045205998 ..> C_0017711970220284096487
+note top of C_0007996665093840938448: This is a adapter for WildDog
+
+'Generated with clang-uml, version 0.5.4-14-ga36f4ca
+'LLVM version Ubuntu clang version 14.0.0-1ubuntu1.1
+@enduml

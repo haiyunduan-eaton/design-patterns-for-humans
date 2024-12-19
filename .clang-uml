@@ -56,3 +56,14 @@ diagrams:
     plantuml:
       after:
          - ' '
+  Adapter_class:
+    type: class
+    glob:
+      - src/Adapter.cpp
+    using_namespace: clanguml
+    include:
+      namespaces:
+        - clanguml
+    plantuml:
+      after:
+         - 'note top of {{ alias("clanguml::WildDogAdapter") }}: This is a adapter for WildDog'
